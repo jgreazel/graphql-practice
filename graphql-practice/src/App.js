@@ -17,7 +17,7 @@ const GET_LAUNCHES = gql`
 const GET_SHIPS = gql`
   {
     ships(limit: 10) {
-      model
+      id
       name
       roles
       year_built
@@ -36,7 +36,9 @@ function App() {
       <h2>Spacex Ships</h2>
       {data.ships.map((ship) => (
         <div>
-          <h4>{ship.name}</h4>
+          <h4>
+            {ship.name} - {ship.id}
+          </h4>
           <p>Built: {ship.year_built}</p>
           <p>
             Roles:{" "}
